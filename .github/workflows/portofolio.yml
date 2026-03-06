@@ -27,6 +27,8 @@ jobs:
       # Static website files upload
       - name: Upload static files
         uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
 
       - name: Deploy pages
         id: deployment
