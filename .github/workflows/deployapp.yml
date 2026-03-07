@@ -2,16 +2,17 @@ name: Deploy-flask
 
 on:
   workflow_dispatch:
+
 jobs:
   deploy:
-    env:
-      DOCKERHUBUSER: ${{ vars.DOCKERHUBUSER }}
     runs-on: self-hosted
 
     steps:
-      - name: checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
+
       - name: Stop old containers
-        run: docker-compose down
-      - name: deploy with docker compose
-        run: docker-compose up -d --build 
+        run: docker-compose down || true
+
+      - name: Build and Run Container
+        run: docker-compose up -d --build
