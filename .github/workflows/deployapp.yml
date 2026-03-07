@@ -1,7 +1,7 @@
 name: Deploy-flask
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   deploy:
     env:
