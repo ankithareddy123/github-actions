@@ -3,6 +3,8 @@ name: Deploy-flask
 on:
   workflow_dispatch
 jobs:
+  environment:
+    DOCKERHUBUSER: ${{ vars.DOCKERHUBUSER }}
   deploy:
     runs-on: self-hosted
 
