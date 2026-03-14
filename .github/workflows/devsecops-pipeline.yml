@@ -4,15 +4,7 @@ on:
 
 jobs:
   deploy:
-    - name: Code quality
       uses: ./.github/workflows/code-quality.yml
-
-    - name: secret scan
       uses: ./.github/workflows/secret-scan.yml
-
-    - name: dependency-scan
       uses: ./.github/workflows/dependencies.yml
-    
-    - name: docker scanner
       uses: ./.github/workflows/docker-lint.yml
-      
